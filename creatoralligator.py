@@ -31,8 +31,10 @@ mirror = Material(spec = 64, matType = REFLECTIVE)
 glass = Material(spec = 64, ior = 1.5, matType= TRANSPARENT)
 
 
-width = 520
-height = 320
+# tamaño de la imagen 2k
+
+width = 2560
+height = 1440
 prueba = Render(width, height)
 prueba.glClearColor(0.2, 0.6, 0.8)
 prueba.glClear()
@@ -45,26 +47,26 @@ prueba.pointLights.append(PointLight(position = (4, -20, 0), intensity = 0.5))
 prueba.dirLight = DirectionalLight(direction =(1, -2, -2), intensity = 0.5)
 prueba.ambientLight = AmbientLight(strength = 0.1)
 
-prueba.envmap = Envmap('text/sape6.bmp')
-#r.scene.append( Sphere(( 0, 0, -8), 2, earthMat))
+prueba.envmap = Envmap('Texturas/sape6.bmp')
+
 
 ###########################################################
 
 ############################################################################################Mesa ############################################
-grama = Material(texture = Texture('text/telasampo.bmp'))
+grama = Material(texture = Texture('Texturas/telasampo.bmp'))
 
 
 
-madera = Material(texture = Texture('text/enma.bmp'))
+madera = Material(texture = Texture('Texturas/enma.bmp'))
 
-palo = Material(texture = Texture('text/rojote.bmp'))
+palo = Material(texture = Texture('Texturas/rojote.bmp'))
 
-madera2 = Material(texture = Texture('text/madera2.bmp'))
+madera2 = Material(texture = Texture('Texturas/madera2.bmp'))
 
-cuadro1 =  Material(texture = Texture('text/perro3.bmp'))
-cuadro2 =  Material(texture = Texture('text/perro4.bmp'))
+cuadro1 =  Material(texture = Texture('Texturas/perro3.bmp'))
+cuadro2 =  Material(texture = Texture('Texturas/perro4.bmp'))
 
-palobillar = Material(texture = Texture('text/palobillar.bmp'))
+palobillar = Material(texture = Texture('Texturas/palobillar1.bmp'))
 
 
 prueba.scene.append(AABB(position=(0, 7, -35), size = (20, 1, 35), material = grama))
@@ -74,15 +76,15 @@ prueba.scene.append(AABB(position=(-10, 7.5, -35), size = (1, 2, 37), material =
 prueba.scene.append(AABB(position=(0, 7.5, -54), size = (20, 2, 1), material = madera))
 prueba.scene.append(AABB(position=(9, 4.3, -19), size = (2, 5, 2), material = madera))
 prueba.scene.append(AABB(position=(-9, 4.3, -19), size = (2, 5, 2), material = madera))
-"""
+
 ########################## BOLAS #################################
 #Fila 5
 
-ballMat11 = Material(texture = Texture('text/ball11.bmp'))
-ballMat12 = Material(texture = Texture('text/ball12.bmp'))
-ballMat13 = Material(texture = Texture('text/ball13.bmp'))
-ballMat14 = Material(texture = Texture('text/ball14.bmp'))
-ballMat15 = Material(texture = Texture('text/ball15.bmp'))
+ballMat11 = Material(texture = Texture('Texturas/ball11.bmp'))
+ballMat12 = Material(texture = Texture('Texturas/ball12.bmp'))
+ballMat13 = Material(texture = Texture('Texturas/ball13.bmp'))
+ballMat14 = Material(texture = Texture('Texturas/ball14.bmp'))
+ballMat15 = Material(texture = Texture('Texturas/ball15.bmp'))
 
 prueba.scene.append(Sphere((0, 8.30, -45), 0.8, ballMat11))
 prueba.scene.append(Sphere((2, 8.30, -45), 0.8, ballMat12))
@@ -91,49 +93,49 @@ prueba.scene.append(Sphere((-2, 8.30, -45), 0.8, ballMat14))
 prueba.scene.append(Sphere((-4, 8.30, -45), 0.8, ballMat15))
 
 #Fila 4
-ballMat7 = Material(texture = Texture('text/ball7.bmp'))
-ballMat8 = Material(texture = Texture('text/ball8.bmp'))
-ballMat9 = Material(texture = Texture('text/ball9.bmp'))
-ballMat10 = Material(texture = Texture('text/ball10.bmp'))
+ballMat7 = Material(texture = Texture('Texturas/ball7.bmp'))
+ballMat8 = Material(texture = Texture('Texturas/ball8.bmp'))
+ballMat9 = Material(texture = Texture('Texturas/ball9.bmp'))
+ballMat10 = Material(texture = Texture('Texturas/ball10.bmp'))
 prueba.scene.append(Sphere((1, 8.30, -40), 0.8, ballMat7))
 prueba.scene.append(Sphere((-1, 8.30, -40), 0.8, ballMat8))
 prueba.scene.append(Sphere((3, 8.30, -40), 0.8, ballMat9))
 prueba.scene.append(Sphere((-3, 8.30, -40), 0.8, ballMat10))
 
 #Fila 3
-ballMat4 = Material(texture = Texture('text/ball5.bmp'))
-ballMat5 = Material(texture = Texture('text/ball6.bmp'))
-ballMat6 = Material(texture = Texture('text/ball7.bmp'))
+ballMat4 = Material(texture = Texture('Texturas/ball5.bmp'))
+ballMat5 = Material(texture = Texture('Texturas/ball6.bmp'))
+ballMat6 = Material(texture = Texture('Texturas/ball7.bmp'))
 prueba.scene.append(Sphere((0, 8.30, -35), 0.8, ballMat4))
 prueba.scene.append(Sphere((2, 8.30, -35), 0.8, ballMat5))
 prueba.scene.append(Sphere((-2, 8.30, -35), 0.8, ballMat6))
 
 #Fila 2
-ballMat2 = Material(texture = Texture('text/ball2.bmp'))
-ballMat3 = Material(texture = Texture('text/ball3.bmp'))
+ballMat2 = Material(texture = Texture('Texturas/ball2.bmp'))
+ballMat3 = Material(texture = Texture('Texturas/ball3.bmp'))
 prueba.scene.append(Sphere((1, 8.30, -30), 0.8, ballMat2))
 prueba.scene.append(Sphere((-1, 8.30, -30), 0.8, ballMat3))
 
 #Fila 1
-ballMat1 = Material(texture = Texture('text/ball1.bmp'))
+ballMat1 = Material(texture = Texture('Texturas/ball1.bmp'))
 prueba.scene.append(Sphere((0, 8.30, -25), 0.8, ballMat1))
 
 #Blanca
-ballMatW = Material(texture = Texture('text/bball.bmp'))
+ballMatW = Material(texture = Texture('Texturas/bball.bmp'))
 prueba.scene.append(Sphere((0, 8.30, -18), 0.8, ballMatW))
-"""
+
 ############### Cuadros ##################################
-"""
+
 prueba.scene.append(AABB(position=(-20, 24, -52), size = (38, 24, 1), material = cuadro1))
 prueba.scene.append(AABB(position=(-20, 24, -54), size = (42, 28, 1), material = madera2))
 prueba.scene.append(AABB(position=(26, 28, -54), size = (30, 20, 1), material = madera2))
 prueba.scene.append(AABB(position=(26, 28, -53), size = (27, 18, 1), material = cuadro2))
-"""
+
 ########################## Esfera reflectiva y retractiva #########################################################
 
 prueba.scene.append(Sphere((0, 30, -40), 7, material = mirror))
-prueba.scene.append(AABB(position=(0, 33, -49), size = (2, 18, 2), material = palo))
-prueba.scene.append(AABB(position=(300, 10, -49), size = (2, 26, 1), material = palobillar))
+prueba.scene.append(AABB(position=(0, 33, -40), size = (2, 18, 2), material = palo))
+prueba.scene.append(AABB(position=(30, 10, -49), size = (1, 42, 1), material = palobillar))
 
 prueba.rtRender()
 
