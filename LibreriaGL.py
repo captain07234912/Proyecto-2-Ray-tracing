@@ -6,9 +6,10 @@ import struct
     Graficas por computadora
     Clase que tiene funciones para todo el curso
     Jorge Suchite Carnet 15293
-    07/07/2020
+    18/10/2020
 
-    Fill a polygon
+
+Proyecto No. 2 Ray Tracing
 """
 
 
@@ -38,7 +39,10 @@ def dword(d):
 
 # colores que son aceptados en bytes pero ahora seran con coordenadas ingresadas de 0 a 1
 
-
+"""
+def color(r, g, b):
+    return bytes([int(b * 255), int(g * 255), int(r * 255)])
+"""
 def color(r, g, b):
     return bytes([int(b * 255), int(g * 255), int(r * 255)])
 
@@ -154,6 +158,15 @@ def productocruz(v1,v2):
  
  stack overflow 
     """
+
+
+
+def JSmultiply(escalar, vector):
+    multiplicar= []
+    for i in range(len(vector)):
+        multiplicar.append(vector[i] * escalar)
+    return multiplicar
+
 def Transpuesta(m):
     return list(map(list,zip(*m)))
 
@@ -191,7 +204,9 @@ def  Inversa(m):
     return cofactors
 
 
-def normal(norm):
+def normal1(norm1):
+
+    norm = [ norm1[0], norm1[1], norm1[2] ]
 
     largo = (norm[0] ** 2 + norm[1] ** 2 + norm[2] ** 2) ** (1 / 2)
     norm[0] =  (norm[0] / largo)
@@ -218,11 +233,65 @@ def magnum2(vector):
     return largo
 
 
+def JSsustract(z1, z2):
+    restar = []
+    if (len(z2) >= len(z1)):
+        for i in range(len(z1)):
+            restar.append(z1[i]-z2[i])
+    return restar
 
-def Suma(list1, list2):
-    suma = []
+
+def JSsummito(z1, z2):
+    summitos = []
+    if (len(z2) >= len(z1)):
+        for i in range(len(z1)):
+
+            summitos.append(z1[i] + z2[i])
+    return  summitos
+
+
+def zeros_matrix(rows, cols):
+
+
+    M = []
+    while len(M) < rows:
+        M.append([])
+        while len(M[-1]) < cols:
+            M[-1].append(0.0)
+
+    return M
+
+def  JSsumamatix(A, B):
+
+    # Section 1: Ensure dimensions are valid for matrix addition
+    rowsA = len(A)
+    colsA = len(A[0])
+    rowsB = len(B)
+    colsB = len(B[0])
+    if rowsA != rowsB or colsA != colsB:
+        raise ArithmeticError('Matrices are NOT the same size.')
+
+    # Section 2: Create a new matrix for the matrix sum
+    C = zeros_matrix(rowsA, colsB)
+
+    # Section 3: Perform element by element sum
+    for i in range(rowsA):
+        for j in range(colsB):
+            C[i][j] = A[i][j] + B[i][j]
+
+    return C
+
+
+
+def JSMultiply2(list1, list2):
+    mult = []
+    #print(list1)
     if (len(list2) >= len(list1)):
         for i in range(len(list1)):
+            mult.append(list1[i] * list2[i])
+    return mult
 
-            suma.append(list1[i] + list2[i])
-    return suma
+
+
+
+

@@ -1,6 +1,6 @@
 from LibreriaGL import *
 from ModelObj import *
-from Sphere import  Sphere, Material, Light
+from Sphere import *
 from Render import Render
 import random
 
@@ -9,10 +9,10 @@ Universidad del Valle de Guatemala
 Graficas por computadora
 Raytracing
 Jorge Suchite Carnet 15293
-07/09/2020
+18/10/2020
 
-DR1 Spheraes and materials
 
+Proyecto No. 2 Ray Tracing
 """
 
 ############################# SNOWMAN ###########################################
@@ -25,12 +25,10 @@ Azulado = Material(diffuse= color(0,0,1))
 
 #################################################################################
 
-width = 700
-height = 700
+width = 500
+height = 300
 
 prueba = Render(width,height)
-prueba.light= Light(position = (-5,5,0), intensity= 1.5)
-
 
 # pa que corra todo junto y no separado
 
@@ -61,4 +59,4 @@ Sphere((0,1.5, -8),0.2,negro),
 prueba.rtRender()
 
 
-prueba.glFinish('Snowman23.bmp')
+prueba.glFinish('Snowman.bmp')
