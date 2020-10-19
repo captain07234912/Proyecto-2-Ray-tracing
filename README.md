@@ -1,3 +1,5 @@
 # Proyecto-2-Ray-tracing
 
-Se tienene unos erroes de las espefras no las pinta, tiempo estimado de la deadline 1 semana
+Los resultados del proyecto o imágenes se llaman outputs.bmp u outputs23.bmp
+Es con python y el principal se llama creatoralligator
+Se trató lo más que se pudo. 
